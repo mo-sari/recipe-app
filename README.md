@@ -13,3 +13,7 @@ DEV arg in dockerfile itself.
 changed the docker-compose and dockerfile and then ==> docker-compose build
 add .flake8 file to configure flake8 package
 docker-compose run --rm app sh -c "flake8" ==> Linting
+
+## Creating the Django Project
+docker-compose run --rm app sh -c "django-admin startproject app ."
+docker-compose up
