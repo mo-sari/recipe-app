@@ -21,3 +21,8 @@ docker-compose up
 ## Fixing db race condition
 docker-compse run --rm app sh -c "python manage.py startapp core"
 Implement management commands
+
+## Changes needed for CI/CD
+first update the workflow
+run docker-compose down
+docker-compose up (you should see "Waiting for database" and "Database available" in terminal)
