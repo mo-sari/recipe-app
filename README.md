@@ -20,3 +20,4 @@ docker-compose up
 
 ## Fixing db race condition
 docker-compse run --rm app sh -c "python manage.py startapp core"
+Implement management commands
