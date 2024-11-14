@@ -17,3 +17,6 @@ docker-compose run --rm app sh -c "flake8" ==> Linting
 ## Creating the Django Project
 docker-compose run --rm app sh -c "django-admin startproject app ."
 docker-compose up
+
+## Fixing db race condition
+docker-compse run --rm app sh -c "python manage.py startapp core"
