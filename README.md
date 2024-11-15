@@ -39,3 +39,11 @@ docker-compose up (you should see "Waiting for database" and "Database available
 first create the model and model manager classes
 configure the settings file to use our custom user model
 run migrations( make migrations)
+docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"
+(with previous command running you should get an error because we have ran the migrations
+before and we have created a user model in our database)
+(for previously mentioned problem we can inspect volumes and delete the volume which was
+connected to our database)
+docker volume ls
+docker volume rm <volume_name>
+docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"
