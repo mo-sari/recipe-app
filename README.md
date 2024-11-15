@@ -47,3 +47,9 @@ connected to our database)
 docker volume ls
 docker volume rm <volume_name>
 docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage.py migrate"
+
+## Creating a new superuser
+
+(run docker-compose up to see if everything is ok)
+docker-compose run --rm app sh -c "python manage.py createsuperuser"
+in running app go to admin panel and enter using super_user credentials
