@@ -29,3 +29,8 @@ class ModelTests(TestCase):
         for Entered_email, Expected_email in sample_emails:
             user = get_user_model().objects.create_user(Entered_email, 'sample123')
             self.assertEqual(user.email, Expected_email)
+
+    def test_email_existence_for_each_user(self):
+        """Test if user has provided any emails"""
+        with self.assertRaises(ValueError):
+            get_user_model().objects.create_user('', 'smaple123')
