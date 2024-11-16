@@ -53,3 +53,10 @@ docker-compose run --rm app sh -c "python manage.py wait_for_db && python manage
 (run docker-compose up to see if everything is ok)
 docker-compose run --rm app sh -c "python manage.py createsuperuser"
 in running app go to admin panel and enter using super_user credentials
+
+## Creating the api schema
+
+(update the requirements.txt and then ==>)
+docker-compose build
+then configure settings.py
+then configure urls.py
