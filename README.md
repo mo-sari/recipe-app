@@ -60,3 +60,11 @@ in running app go to admin panel and enter using super_user credentials
 docker-compose build
 then configure settings.py
 then configure urls.py
+
+## UserAPI
+
+docker-compose run --rm app sh -c "python manage.py startapp user"
+(remove migrations, admin, models.py, tests.py)
+(create a new directory for tests, in it create **init**)
+add user to Installed_apps
+implement the tests(test_user_api.py)
