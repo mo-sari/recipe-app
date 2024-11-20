@@ -68,3 +68,8 @@ docker-compose run --rm app sh -c "python manage.py startapp user"
 (create a new directory for tests, in it create **init**)
 add user to Installed_apps
 implement the tests(test_user_api.py)
+(skipped this part)
+
+## RecipeAPI
+
+one good example of why would we use get_serializer_class method in a view
