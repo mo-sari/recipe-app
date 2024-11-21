@@ -1,10 +1,13 @@
 """Views for Recipe API's"""
 
-from rest_framework import viewsets
+from rest_framework import viewsets, mixins
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 
-from core.models import Recipe
+from core.models import (
+    Recipe,
+    Tag
+)
 from recipe import serializers
 
 
@@ -29,3 +32,18 @@ class RecipeVeiwSet(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         """Create a new Recipe"""
         serializer.save(user=self.request.user)
+
+
+# in the line below it is important to have GenericViewSet at last
+class TagViewSet(mixins.UpdateModelMixin,
+                 mixins.ListModelMixin,
+                 mixins.DestroyModelMixin,
+                 viewsets.GenericViewSet,):
+
+    queryset = Tag.objects.all()
+    permission_classes = [IsAuthenticated]
+    authentication_classes = [TokenAuthentication]
+    serializer_class = serializers.TagSerializer
+
+    def get_queryset(self):
+        return Tag.objects.filter(user=self.request.user).order_by('-name')
