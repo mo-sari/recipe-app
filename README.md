@@ -73,3 +73,15 @@ implement the tests(test_user_api.py)
 ## RecipeAPI
 
 one good example of why would we use get_serializer_class method in a view
+
+## Required system libraries
+
+when working with containerized app's we choose an OS, and that might not have
+some basic needed libraries by default ( like we need to work with images but
+our OS does not support that out of the box so we would have to install some
+stuff on it). those libraries we must find based on our OS, that are they needed
+or does the python package I'm about to install need any of those libraries?
+then we would install them in our dockerfile using apk
+(now that we want to use pillow we need some system and python packages as well
+and we installed them all)
+then run docker-compose build
