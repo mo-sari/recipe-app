@@ -85,3 +85,10 @@ then we would install them in our dockerfile using apk
 (now that we want to use pillow we need some system and python packages as well
 and we installed them all)
 then run docker-compose build
+
+## Configuration of static and media files
+
+update dockerfile
+docker-compose build
+update docker-compose
+update settings file
